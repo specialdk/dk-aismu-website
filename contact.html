@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — aiskillmeup | Let's talk about your AI</title>
+  <meta name="description" content="Get in touch about AI training or building for your team. Cairns-based. Tell me a bit about your team and what you're hoping to get from AI." />
+
+  <meta property="og:title" content="Contact — aiskillmeup" />
+  <meta property="og:description" content="Let's talk about training your team or building a tool. Email-first — tell me what you're after." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/hero.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Spline+Sans:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 4 C 14 5 9 10 5 19 C 13 17 17 13 19 4 Z' fill='%23D85A30'/%3E%3Cline x1='5' y1='19' x2='19' y2='4' stroke='%231F3A5F' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E" />
+
+  <!-- ===== Page-scoped styles (Contact page only). Shared tokens stay in style.css. ===== -->
+  <style>
+    .page-intro { border-top: 0; padding-bottom: clamp(14px, 3vw, 30px); }
+    .page-intro .lead {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(26px, 4vw, 46px); line-height: 1.1;
+      letter-spacing: -1px; max-width: 760px; margin-bottom: 20px;
+    }
+    .page-intro .lead em { font-style: italic; color: var(--coral); }
+    .page-intro .lead-sub { color: var(--ink-soft); font-size: clamp(15px, 1.6vw, 19px); max-width: 560px; }
+    .nav-links a[aria-current="page"] { color: var(--coral); }
+
+    /* Layout: form + aside */
+    .contact-layout {
+      max-width: var(--maxw); margin: 0 auto;
+      padding: clamp(20px, 4vw, 50px) var(--pad) clamp(50px, 8vw, 90px);
+      display: grid; grid-template-columns: 1.5fr 1fr;
+      gap: clamp(34px, 6vw, 72px); align-items: start;
+    }
+
+    /* Form */
+    .field { margin-bottom: 22px; }
+    .field label {
+      display: block; font-size: 12px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--ink-soft); margin-bottom: 9px;
+    }
+    .field input, .field textarea {
+      width: 100%; padding: 13px 15px;
+      font-family: var(--sans); font-size: 16px; color: var(--ink);
+      background: rgba(255,255,255,.45);
+      border: 1px solid var(--border); border-radius: 2px;
+      transition: border-color .15s ease, background .15s ease;
+    }
+    .field input:focus, .field textarea:focus {
+      outline: none; border-color: var(--coral); background: #fff;
+    }
+    .field input::placeholder, .field textarea::placeholder { color: #9AA7BC; }
+    .field textarea { min-height: 150px; resize: vertical; line-height: 1.55; }
+    .field .optional { color: #9AA7BC; text-transform: none; letter-spacing: 0; font-size: 12px; }
+
+    /* Honeypot — hidden from people, catches bots */
+    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+    .form-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 4px; }
+    .form-status { font-size: 15px; }
+    .form-status.ok  { color: #2C7A4B; }
+    .form-status.err { color: var(--coral); }
+    button[disabled] { opacity: .55; cursor: default; }
+
+    /* Aside */
+    .contact-aside h3 {
+      font-family: var(--serif); font-weight: 500; font-size: 20px; margin-bottom: 10px;
+    }
+    .contact-aside p { color: var(--ink-soft); font-size: 15px; margin-bottom: 22px; }
+    .contact-aside .big-email {
+      font-family: var(--serif); font-size: clamp(19px, 2.2vw, 24px);
+      border-bottom: 1px solid var(--border); padding-bottom: 3px;
+      transition: color .15s ease, border-color .15s ease; word-break: break-word;
+    }
+    .contact-aside .big-email:hover { color: var(--coral); border-color: var(--coral); }
+    .aside-block { margin-bottom: 30px; }
+    .aside-link { border-bottom: 1px solid var(--ink-soft); transition: color .15s, border-color .15s; }
+    .aside-link:hover { color: var(--coral); border-color: var(--coral); }
+
+    @media (max-width: 860px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 44px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Top bar ===== -->
+  <header class="nav" id="top">
+    <a class="logo" href="/" aria-label="aiskillmeup home">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M19 4 C 14 5 9 10 5 19 C 13 17 17 13 19 4 Z" fill="var(--coral)"/>
+        <line x1="5" y1="19" x2="19" y2="4" stroke="var(--ink)" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <span>aiskillmeup</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-links">
+      <a href="about.html">About</a>
+      <a href="work.html">Work</a>
+      <a href="training.html">Training</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+      <a href="contact.html" class="nav-cta">Hire me</a>
+    </nav>
+  </header>
+
+  <!-- ===== Intro ===== -->
+  <section class="section page-intro reveal">
+    <p class="section-label">Contact</p>
+    <h1 class="lead">Let's talk about <em>your</em> AI.</h1>
+    <p class="lead-sub">
+      Training a team, building a tool, or just want a straight answer on what's
+      worth doing? Tell me a bit about where you're at and what you're hoping for —
+      the more you share, the more useful my reply.
+    </p>
+  </section>
+
+  <!-- ===== Form + aside ===== -->
+  <div class="contact-layout reveal">
+
+    <!-- Form -->
+    <form id="contact-form" novalidate>
+      <div class="field">
+        <label for="cf-name">Your name</label>
+        <input id="cf-name" name="name" type="text" autocomplete="name" required />
+      </div>
+      <div class="field">
+        <label for="cf-email">Email</label>
+        <input id="cf-email" name="email" type="email" autocomplete="email" placeholder="your@email.com" required />
+      </div>
+      <div class="field">
+        <label for="cf-org">Organisation <span class="optional">(optional)</span></label>
+        <input id="cf-org" name="organisation" type="text" autocomplete="organization" />
+      </div>
+      <div class="field">
+        <label for="cf-msg">About your team &amp; what you want from AI</label>
+        <textarea id="cf-msg" name="message" placeholder="A few lines on your team, where you're starting from, and what a good outcome looks like." required></textarea>
+      </div>
+
+      <!-- Honeypot: leave empty. Hidden from people; bots fill it and get dropped. -->
+      <div class="hp" aria-hidden="true">
+        <label>Company<input name="company" type="text" tabindex="-1" autocomplete="off" /></label>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-primary" id="cf-submit">Send message</button>
+        <span class="form-status" id="cf-status" role="status" aria-live="polite"></span>
+      </div>
+    </form>
+
+    <!-- Aside -->
+    <aside class="contact-aside">
+      <div class="aside-block">
+        <h3>Prefer to just email?</h3>
+        <p>Go straight to my inbox — same place the form lands.</p>
+        <a class="big-email" href="mailto:duane@aiskillmeup.com?subject=AI%20enquiry">duane@aiskillmeup.com</a>
+      </div>
+
+      <div class="aside-block">
+        <h3>Elsewhere</h3>
+        <p>
+          Cairns, Far North Queensland<br/>
+          <!-- TODO: drop in your real LinkedIn URL -->
+          <a class="aside-link" href="#" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </p>
+      </div>
+
+      <div class="aside-block">
+        <h3>What happens next</h3>
+        <p>
+          I read every message myself. I'm not always free to take on new work, but
+          I'll always reply — and if it's not a fit, I'll point you somewhere that is.
+        </p>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer reveal">
+    <div class="footer-grid">
+      <div>
+        <h3>Get an email when I write something.</h3>
+        <p class="footer-p">One or two a month. Tools I'm actually using, projects
+           in flight, lessons from the work. No filler.</p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" placeholder="your@email.com" aria-label="Email address" />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div>
+        <h3>Get in touch.</h3>
+        <p class="footer-p">
+          duane@aiskillmeup.com<br/>
+          Cairns, Far North Queensland<br/>
+          <a href="#" class="footer-link">LinkedIn ↗</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span><span class="status-dot"></span>Currently: training RAC on Claude, building aiskillmeup</span>
+      <span>© 2026 aiskillmeup</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (function () {
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+      var btn = document.getElementById('cf-submit');
+      var status = document.getElementById('cf-status');
+
+      function setStatus(msg, kind) {
+        status.textContent = msg;
+        status.className = 'form-status' + (kind ? ' ' + kind : '');
+      }
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        setStatus('', '');
+
+        var data = {
+          name: form.name.value.trim(),
+          email: form.email.value.trim(),
+          organisation: form.organisation.value.trim(),
+          message: form.message.value.trim(),
+          company: form.company.value.trim() // honeypot
+        };
+
+        if (!data.name || !data.email || !data.message) {
+          setStatus('Please add your name, email, and a message.', 'err');
+          return;
+        }
+
+        btn.disabled = true;
+        var original = btn.textContent;
+        btn.textContent = 'Sending…';
+
+        try {
+          var res = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+          var out = await res.json().catch(function () { return {}; });
+
+          if (res.ok && out.ok) {
+            form.reset();
+            setStatus("Thanks — that's landed in my inbox. I'll be in touch.", 'ok');
+          } else {
+            setStatus(out.error || 'Something went wrong. Please email me directly.', 'err');
+          }
+        } catch (err) {
+          setStatus('Could not send right now. Please email me directly at duane@aiskillmeup.com.', 'err');
+        } finally {
+          btn.disabled = false;
+          btn.textContent = original;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

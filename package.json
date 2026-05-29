@@ -1,0 +1,17 @@
+{
+  "name": "aiskillmeup-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "aiskillmeup marketing site + contact endpoint (Express, served on Railway)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "20.x"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "resend": "^4.0.0"
+  }
+}
