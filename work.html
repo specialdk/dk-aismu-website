@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work — aiskillmeup | Real AI tools, shipped to production</title>
+  <meta name="description" content="A look at the AI tools I've built and shipped inside a real organisation — finance dashboards, voice-to-publish pipelines, a grants assistant, an inventory system of record — and the discipline behind them." />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="Work — aiskillmeup" />
+  <meta property="og:description" content="Real AI tools, shipped to production. And the standard I hold every build to." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/hero.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Spline+Sans:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 4 C 14 5 9 10 5 19 C 13 17 17 13 19 4 Z' fill='%23D85A30'/%3E%3Cline x1='5' y1='19' x2='19' y2='4' stroke='%231F3A5F' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E" />
+
+  <!-- ===== Page-scoped styles (Work page only). Shared tokens stay in style.css. ===== -->
+  <style>
+    /* Lead-in header sits straight under the nav, no top divider */
+    .page-intro { border-top: 0; padding-bottom: clamp(20px, 4vw, 40px); }
+    .page-intro .lead {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(26px, 4vw, 46px);
+      line-height: 1.1;
+      letter-spacing: -1px;
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+    .page-intro .lead em { font-style: italic; color: var(--coral); }
+    .page-intro .lead-sub { color: var(--ink-soft); font-size: clamp(15px, 1.6vw, 19px); max-width: 560px; }
+
+    /* Highlight the current nav item */
+    .nav-links a[aria-current="page"] { color: var(--coral); }
+
+    /* Richer work cards on the dedicated page: an italic approach line under the description */
+    .work-card .card-note {
+      margin-top: 14px;
+      padding-top: 13px;
+      border-top: 1px solid rgba(244,237,224,.16);
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--coral-soft);
+    }
+    .work-grid.detailed { gap: 18px; }
+
+    /* Closing call-to-action band */
+    .cta-band { background: var(--cream-dk); padding: clamp(56px, 9vw, 100px) var(--pad); text-align: center; }
+    .cta-band h2 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(26px, 3.8vw, 44px); line-height: 1.12;
+      letter-spacing: -0.8px; max-width: 620px; margin: 0 auto 24px;
+    }
+    .cta-band p { color: var(--ink-soft); max-width: 520px; margin: 0 auto 30px; }
+    .cta-band .hero-ctas { justify-content: center; }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Top bar ===== -->
+  <header class="nav" id="top">
+    <a class="logo" href="/" aria-label="aiskillmeup home">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M19 4 C 14 5 9 10 5 19 C 13 17 17 13 19 4 Z" fill="var(--coral)"/>
+        <line x1="5" y1="19" x2="19" y2="4" stroke="var(--ink)" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <span>aiskillmeup</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-links">
+      <a href="about.html">About</a>
+      <a href="work.html" aria-current="page">Work</a>
+      <a href="training.html">Training</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-cta">Hire me</a>
+    </nav>
+  </header>
+
+  <!-- ===== Page intro ===== -->
+  <section class="section page-intro reveal">
+    <p class="section-label">Work</p>
+    <h1 class="lead">Real tools, <em>shipped</em> to production — not slideware.</h1>
+    <p class="lead-sub">
+      Over the last year I've built a portfolio of working AI tools inside a live
+      organisation: finance dashboards leadership reads daily, a voice-to-publish
+      pipeline used by the whole team, a grants assistant, an inventory system of
+      record. Here's a sample — and the standard I hold every build to.
+    </p>
+  </section>
+
+  <!-- ===== Selected builds (dark band) ===== -->
+  <section class="work-band reveal">
+    <p class="section-label">Selected builds</p>
+    <h2 class="section-h2">Each one solving a problem the team actually had.</h2>
+    <div class="work-grid detailed">
+
+      <article class="work-card">
+        <p class="work-tag">Finance · multi-entity group</p>
+        <h4>Executive financial dashboards</h4>
+        <p>Live accounting data across a multi-company group pulled into one place —
+           profit &amp; loss, cash position, aged debtors, budget versus actual — with
+           an AI layer that explains the numbers in plain language. Read daily by
+           leadership.</p>
+        <p class="card-note">Built configuration-first; figures reconciled against source before anyone quotes them.</p>
+      </article>
+
+      <article class="work-card">
+        <p class="work-tag">Operations · voice capture</p>
+        <h4>Voice-to-publish staff pipeline</h4>
+        <p>Staff publish updates just by speaking. AI cleans and formats the text
+           while preserving the speaker's own voice; every item then passes a human
+           approver before it goes live. In production with around thirty-five staff.</p>
+        <p class="card-note">Human-in-the-loop by design — nothing publishes itself.</p>
+      </article>
+
+      <article class="work-card">
+        <p class="work-tag">Knowledge · grants</p>
+        <h4>Grants assistant</h4>
+        <p>Reads a grant's structure from a link or uploaded form, drafts a first-pass
+           application grounded in the organisation's own knowledge base, then scores
+           that draft against the funder's criteria — a person in the loop at every
+           step.</p>
+        <p class="card-note">Used end-to-end to put a real funding application out the door.</p>
+      </article>
+
+      <article class="work-card">
+        <p class="work-tag">Operations · inventory</p>
+        <h4>Inventory system of record</h4>
+        <p>An append-only stock-movement ledger with running average cost and
+           deterministic production-run costing, feeding straight into quarterly
+           financial reconciliation. Replaced a spreadsheet held together with hope.</p>
+        <p class="card-note">One source of truth the finance system can actually trust.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== How I build (the differentiator) ===== -->
+  <section class="section reveal">
+    <p class="section-label">How I build</p>
+    <h2 class="section-h2">The part most people skip.</h2>
+    <div class="what-grid">
+      <article>
+        <p class="what-num">01</p>
+        <h3>Grounded</h3>
+        <p>Every build gets checked against the code that's actually running — not a
+           demo, not a deck. If something isn't verified yet, I say so plainly.</p>
+      </article>
+      <article>
+        <p class="what-num">02</p>
+        <h3>Honest</h3>
+        <p>I keep track of what's proven versus what's still a claim. The bar is
+           "true", not "impressive" — that's the difference between a tool you can
+           rely on and one you can only demo.</p>
+      </article>
+      <article>
+        <p class="what-num">03</p>
+        <h3>Reviewed</h3>
+        <p>Anything that matters has a person in the loop. AI does the drafting and
+           the heavy lifting; people stay in charge of the decisions.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== The difference (carried through from the homepage voice) ===== -->
+  <section class="difference reveal">
+    <div class="difference-inner">
+      <h2>Anyone can wire up a demo.<br/>Few can ship one you'd trust.</h2>
+      <p>
+        The tools above aren't experiments — they're in daily use, doing real work,
+        held to a documented standard. That discipline is the thing I teach, and
+        it's the thing that's hardest to fake.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Closing CTA ===== -->
+  <section class="cta-band reveal">
+    <h2>Want something like this built — or want to learn how?</h2>
+    <p>Whether you need a tool shipped or your team trained to build their own, that's the conversation I'm here for.</p>
+    <div class="hero-ctas">
+      <a href="contact.html" class="btn-primary">Book a session</a>
+      <a href="training.html" class="btn-link">See training options →</a>
+    </div>
+  </section>
+
+  <!-- ===== Footer: newsletter + contact ===== -->
+  <footer class="footer reveal">
+    <div class="footer-grid">
+      <div>
+        <h3>Get an email when I write something.</h3>
+        <p class="footer-p">One or two a month. Tools I'm actually using, projects
+           in flight, lessons from the work. No filler.</p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" placeholder="your@email.com" aria-label="Email address" />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div>
+        <h3>Get in touch.</h3>
+        <p class="footer-p">
+          duane@aiskillmeup.com<br/>
+          Cairns, Far North Queensland<br/>
+          <a href="#" class="footer-link">LinkedIn ↗</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span><span class="status-dot"></span>Currently: training RAC on Claude, building aiskillmeup</span>
+      <span>© 2026 aiskillmeup</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
