@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — aiskillmeup | Duane Kuru, Cairns</title>
+  <meta name="description" content="Twenty years in business intelligence, now building and teaching practical AI for small business. Cairns-based. The honest story behind aiskillmeup." />
+
+  <meta property="og:title" content="About — aiskillmeup" />
+  <meta property="og:description" content="Twenty years of BI, then a pivot. I help small businesses use AI properly — built on real production experience." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/portrait.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Spline+Sans:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 4 C 14 5 9 10 5 19 C 13 17 17 13 19 4 Z' fill='%23D85A30'/%3E%3Cline x1='5' y1='19' x2='19' y2='4' stroke='%231F3A5F' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E" />
+
+  <!-- ===== Page-scoped styles (About page only). Shared tokens stay in style.css. ===== -->
+  <style>
+    .nav-links a[aria-current="page"] { color: var(--coral); }
+
+    /* Intro: portrait + opening, magazine-style */
+    .about-hero {
+      max-width: var(--maxw); margin: 0 auto;
+      padding: clamp(20px, 4vw, 50px) var(--pad) clamp(30px, 5vw, 60px);
+      display: grid; grid-template-columns: 1fr 1.15fr;
+      gap: clamp(30px, 5vw, 64px); align-items: center;
+    }
+    .about-portrait {
+      aspect-ratio: 3 / 4; border-radius: 2px; overflow: hidden;
+      background: var(--cream-dk);
+      box-shadow: 0 24px 50px -20px rgba(31,58,95,.4);
+    }
+    .about-portrait img { width: 100%; height: 100%; object-fit: cover; }
+    .about-hero .eyebrow { margin-bottom: 22px; }
+    .about-hero h1 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(34px, 5vw, 60px); line-height: 1.04;
+      letter-spacing: -1.4px; margin-bottom: 22px;
+    }
+    .about-hero h1 em { font-style: italic; color: var(--coral); }
+    .about-hero .standfirst { color: var(--ink-soft); font-size: clamp(16px, 1.7vw, 20px); max-width: 460px; }
+
+    /* Prose body */
+    .prose { max-width: 720px; margin: 0 auto; }
+    .prose h2 {
+      font-family: var(--serif); font-weight: 500;
+      font-size: clamp(21px, 2.6vw, 29px); line-height: 1.2;
+      letter-spacing: -0.5px; margin: 0 0 18px;
+    }
+    .prose h2:not(:first-child) { margin-top: 46px; }
+    .prose p { margin-bottom: 18px; font-size: 17px; line-height: 1.65; }
+    .prose p .lead-in { color: var(--ink-soft); }
+
+    /* Big pull-quote — the About page's signature editorial move */
+    .pullquote {
+      background: var(--ink); color: var(--cream);
+      padding: clamp(50px, 8vw, 90px) var(--pad);
+    }
+    .pullquote blockquote {
+      max-width: 880px; margin: 0 auto; text-align: center;
+      font-family: var(--serif); font-weight: 400; font-style: italic;
+      font-size: clamp(24px, 3.6vw, 42px); line-height: 1.2; letter-spacing: -0.6px;
+    }
+    .pullquote .pq-mark { color: var(--coral-soft); }
+
+    /* "Right now" band — the personal, uncopyable touch */
+    .now-band { background: var(--cream-dk); padding: clamp(50px, 8vw, 90px) var(--pad); }
+    .now-inner { max-width: var(--maxw); margin: 0 auto; }
+    .now-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3vw, 40px); }
+    .now-grid h4 {
+      font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--coral); margin-bottom: 10px;
+    }
+    .now-grid p { font-size: 15px; color: var(--ink); }
+    .now-grid p span { color: var(--ink-soft); }
+
+    /* CTA */
+    .cta-band { padding: clamp(54px, 8vw, 90px) var(--pad); text-align: center; }
+    .cta-band h2 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(26px, 3.6vw, 42px); line-height: 1.12;
+      letter-spacing: -0.8px; max-width: 600px; margin: 0 auto 24px;
+    }
+    .cta-band .hero-ctas { justify-content: center; }
+
+    @media (max-width: 860px) {
+      .about-hero { grid-template-columns: 1fr; }
+      .about-portrait { max-width: 360px; order: -1; }
+      .now-grid { grid-template-columns: 1fr; gap: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Top bar ===== -->
+  <header class="nav" id="top">
+    <a class="logo" href="/" aria-label="aiskillmeup home">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M19 4 C 14 5 9 10 5 19 C 13 17 17 13 19 4 Z" fill="var(--coral)"/>
+        <line x1="5" y1="19" x2="19" y2="4" stroke="var(--ink)" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <span>aiskillmeup</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-links">
+      <a href="about.html" aria-current="page">About</a>
+      <a href="work.html">Work</a>
+      <a href="training.html">Training</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-cta">Hire me</a>
+    </nav>
+  </header>
+
+  <!-- ===== Intro: portrait + opening ===== -->
+  <section class="about-hero reveal">
+    <div class="about-portrait">
+      <!-- Placeholder portrait. Swap images/portrait.png for the real Cairns photo when ready. -->
+      <img src="images/portrait.png" alt="Duane Kuru" />
+    </div>
+    <div>
+      <p class="eyebrow">About</p>
+      <h1>I help small businesses use AI <em>properly</em>.</h1>
+      <p class="standfirst">That's the short version. The longer one is more interesting — twenty years of business intelligence, and then a pivot.</p>
+    </div>
+  </section>
+
+  <!-- ===== Prose ===== -->
+  <section class="section prose reveal" style="border-top:0; padding-top:clamp(10px,2vw,24px);">
+
+    <h2>Twenty years of BI, and then a pivot</h2>
+    <p>I'm a Kwazzie — Kiwi-Australian. Red-headed Mum from Christchurch, Dad from
+       Turangi (Tūwharetoa), who came to Australia at eighteen. I grew up here.</p>
+    <p>I spent twenty years as a business analyst and then a BI team leader — six of
+       them inside a software company, sitting alongside developers, describing the
+       changes I needed and working with them to get those right; the rest leading
+       teams of my own. Most recently, seven and a half years running the data team
+       for Thrifty Car Rental at NRMA in Sydney. Dashboards, developers, data quality,
+       the works. The job taught me what business people actually need from technology
+       — which turns out to be quite different from what most technology people think
+       they need.</p>
+
+    <h2>I don't write code — in the traditional sense</h2>
+    <p>Here's the honest part: I don't sit down and write code line by line. What I do
+       is describe the logic — clearly, in plain language — and direct the AI to build
+       it, the same way I spent years directing developers. Twenty years of reading
+       SQL, decomposing a problem, spotting the edge cases, and knowing what good
+       output looks like turns out to be exactly the right preparation for this.</p>
+    <p>The AI writes the syntax. I bring the logical thinking, the debugging instinct,
+       and the experience of knowing when an answer is wrong. People call this "vibe
+       coding", which makes it sound looser than it is — a decade of running
+       developers turned out to be excellent training for the work I do now.</p>
+
+    <h2>What that's actually produced</h2>
+    <p>Not theory — shipped tools, in daily use inside a real organisation. Executive
+       financial dashboards that leadership reads every day. A voice-to-publish
+       pipeline the whole team uses. A grants assistant. An inventory system of record.
+       And behind all of it, a documented standard that holds each build to the same
+       bar — which is the part I care most about, and the part I teach.</p>
+  </section>
+
+  <!-- ===== Pull-quote ===== -->
+  <section class="pullquote reveal">
+    <blockquote>
+      <span class="pq-mark">“</span>I don't just teach AI. I use it every day to build real things — and then I show you how.<span class="pq-mark">”</span>
+    </blockquote>
+  </section>
+
+  <!-- ===== More prose: the project I'm most invested in ===== -->
+  <section class="section prose reveal">
+    <h2>The project I'm most invested in</h2>
+    <p>Alongside the consulting and training, I'm part of the <strong>Yolŋu Matha
+       Corpus and Preservation Pilot</strong> — building a digital corpus and learning
+       resources for one of Australia's oldest living languages, in partnership with
+       community. We've scoped it, submitted for funding through an app we built
+       ourselves, and we're waiting to hear. It's the kind of work that's only now
+       becoming possible for languages of this kind, and it matters to me more than
+       anything else on this page.</p>
+  </section>
+
+  <!-- ===== Right now ===== -->
+  <section class="now-band reveal">
+    <div class="now-inner">
+      <p class="section-label" style="color:var(--coral);">Right now</p>
+      <h2 class="section-h2" style="margin-bottom:36px;">A snapshot, kept current.</h2>
+      <div class="now-grid">
+        <div>
+          <h4>Building</h4>
+          <p>aiskillmeup, and the next round of tools for the organisations I work with. <span>Always something in flight.</span></p>
+        </div>
+        <div>
+          <h4>Teaching</h4>
+          <p>Training a team on Claude, end to end — from first steps to running real work with it. <span>Plain language, no jargon.</span></p>
+        </div>
+        <div>
+          <h4>Based</h4>
+          <p>Cairns, Far North Queensland. <span>Available locally and wherever the work takes me — and yes, fuelled by good coffee.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-band reveal">
+    <h2>Want to put this to work in your business?</h2>
+    <div class="hero-ctas">
+      <a href="contact.html" class="btn-primary">Get in touch</a>
+      <a href="training.html" class="btn-link">See how I train teams →</a>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer reveal">
+    <div class="footer-grid">
+      <div>
+        <h3>Get an email when I write something.</h3>
+        <p class="footer-p">One or two a month. Tools I'm actually using, projects
+           in flight, lessons from the work. No filler.</p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" placeholder="your@email.com" aria-label="Email address" />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div>
+        <h3>Get in touch.</h3>
+        <p class="footer-p">
+          duane@aiskillmeup.com<br/>
+          Cairns, Far North Queensland<br/>
+          <a href="#" class="footer-link">LinkedIn ↗</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span><span class="status-dot"></span>Currently: training RAC on Claude, building aiskillmeup</span>
+      <span>© 2026 aiskillmeup</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
